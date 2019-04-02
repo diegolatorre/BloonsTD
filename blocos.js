@@ -11,6 +11,7 @@ function newBloco(x, y) {
 }
 
 Bloco.prototype.blocoRun = function (ctx) {
+    this.y += 5;
     ctx.beginPath();
     ctx.fillStyle = 'black';
     ctx.lineWeight = 2;

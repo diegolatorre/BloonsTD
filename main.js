@@ -12,8 +12,6 @@ var tiros = [];
 var blocos = [];
 
 function init() {
-
-
     //EVENTO DO MOUSE
     canvas.addEventListener('mousemove', onMouseMove, false);
 
@@ -39,22 +37,18 @@ function draw() {
     // Limpa o canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    ctx.save();
+    //ctx.save();
 
     if (tiros.length != 0) {
         for (var t = 0; t < tiros.length; t++) {
-            tiros[t].y -= 30;
             tiros[t].tiroRun(ctx);
             tiros[t].tiroOutScreen();
-            for (let i = 0; i < blocos.length; i++) {
-                tiros[t].impactoBola(blocos[i]);
-            }
+            tiros[t].impactoBola();
         }
     }
 
     if (blocos.length != 0) {
         for (let i = 0; i < blocos.length; i++) {
-            blocos[i].y += 5;
             blocos[i].blocoRun(ctx);
             blocos[i].blocoOutScreen();
         }
@@ -63,7 +57,7 @@ function draw() {
     ctx.beginPath();
     ctx.fillStyle = 'gray';
     ctx.fillRect(barBottom.x, barBottom.y, barBottom.width, barBottom.height);
-    ctx.restore();
+    //ctx.restore();
 }
 
 function showCount() {
