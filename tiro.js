@@ -38,9 +38,9 @@ Tiro.prototype.impactoBola = function () {
 Tiro.prototype.tiroOutScreen = function () {
     if (this.y < 0) {
         this.removeTiro();
-        return;
+        return true;
     }
-    return;
+    return false;
 }
 
 Tiro.prototype.removeTiro = function () {

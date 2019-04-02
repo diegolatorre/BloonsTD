@@ -42,8 +42,9 @@ function draw() {
     if (tiros.length != 0) {
         for (var t = 0; t < tiros.length; t++) {
             tiros[t].tiroRun(ctx);
-            tiros[t].tiroOutScreen();
-            tiros[t].impactoBola();
+            if (tiros[t].tiroOutScreen() !== true) {
+                tiros[t].impactoBola();
+            }
         }
     }
 
