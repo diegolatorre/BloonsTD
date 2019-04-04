@@ -24,9 +24,9 @@ var barBottom = { x: 100, y: 300, width: 100, height: 10 };
 
 var velocidade = 1;
 
-var gPressed = false;
+var gravidadeZero = false;
 
-var pPressed = false;
+var congelar = false;
 
 var tiroRasante = false;
 

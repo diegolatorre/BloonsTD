@@ -19,6 +19,7 @@ function onKeyDown(ev) {
         newBloco(barBottom.x + barBottom.width / 2, 0);
     }
     
+    /*
     if (ev.keyCode == 71) { //G
         if (gPressed == false) {
             velocidade = 0.2;
@@ -33,7 +34,7 @@ function onKeyDown(ev) {
         }
     }
 
-    if (ev.keyCode == 80) {
+    if (ev.keyCode == 80) { //P
         if (pPressed == false) {
             velocidade = 0;
             pPressed = true;
@@ -45,7 +46,7 @@ function onKeyDown(ev) {
             pPressed = false;
             return;
         }
-    }
+    }*/
 }
 
     function onMouseDown() {
