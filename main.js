@@ -28,6 +28,8 @@ var gPressed = false;
 
 var pPressed = false;
 
+var tiroRasante = false;
+
 var count = 0;
 
 var life = 100;
@@ -73,7 +75,7 @@ function draw() {
     if (tiros.length != 0) {
         for (var t = 0; t < tiros.length; t++) {
             tiros[t].tiroRun(ctx);
-            if (!tiros[t].tiroOutScreen() && count >= 10) {
+            if (!tiros[t].tiroOutScreen() && tiroRasante == true) {
                 tiros[t].impactoBolaRasante();
             }
             if (typeof tiros[t] !== 'undefined' && !tiros[t].tiroOutScreen()) {

@@ -6,8 +6,10 @@
 canvas {
     width: 80%;
     height: 500px;
+    margin-top: 0px;
+    padding-top: 0px;
+    margin: 30px;
     border: solid 1px black;
-    margin: 0px;
 }
 
 #count {
