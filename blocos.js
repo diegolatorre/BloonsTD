@@ -21,9 +21,10 @@ Bloco.prototype.blocoRun = function (ctx) {
 }
 
 
-Bloco.prototype.blocoOutScreen = function blocoOutScreen(bloco, blocos) {
-    if (this.y < 0) {
+Bloco.prototype.blocoOutScreen = function blocoOutScreen() {
+    if (this.y > 500) {
         this.removeBloco();
+        perdeVida();
     }
 }
 

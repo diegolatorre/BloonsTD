@@ -30,6 +30,8 @@ var pPressed = false;
 
 var count = 0;
 
+var life = 100;
+
 var started = 1;
 
 var tiros = [];
@@ -54,6 +56,10 @@ function init() {
 function draw() {
     if (!started) {
         return;
+    }
+
+    if (life <= 0) {
+        gameOver();
     }
 
     var ctx = setupCanvas(document.querySelector('canvas'));
@@ -92,14 +98,6 @@ function draw() {
 function showCount() {
     count++;
     document.getElementById("count").innerHTML = count;
-    changeBackground();
-}
-
-function changeBackground() {
-    corR = Math.floor(Math.random() * 255);
-    corG = Math.floor(Math.random() * 255);
-    corB = Math.floor(Math.random() * 255);
-    document.getElementById("canvas").style.backgroundColor = 'rgb(' + corR + ',' + corG + ',' + corB + ', 0.3)';
 }
 
 function gameOver() {
@@ -107,6 +105,16 @@ function gameOver() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     document.getElementById("canvas").style.backgroundColor = 'rgb(255, 0, 0)';
     started = false;
+}
+
+function perdeVida() {
+    life -= 15;
+    if (life < 0) {
+        life = 0;
+        document.getElementById("life").innerHTML = life;
+    } else {
+        document.getElementById("life").innerHTML = life;
+    }
 }
 
 function startGame() {
