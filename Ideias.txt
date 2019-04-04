@@ -1,0 +1,19 @@
+Tiro rasante (feito) {
+	ultrapassa os baloes.
+}
+
+Gravidade Zero (feito) {
+	altera a velocidade dos balões;
+}
+
+multiplicação dos macacos {
+	multiplica o numero de elementos que atira;
+}
+
+congelamento dos baloes (feito) {
+	congela os baloes que estao caindo por determinado tempo;
+}
+
+algo flutuando na tela {
+	algum objeto flutuando na tela, ajudando a eliminar os balões;
+}

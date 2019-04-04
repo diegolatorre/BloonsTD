@@ -1,7 +1,32 @@
+// RequestAnimFrame: a browser API for getting smooth animations
+window.requestAnimFrame = (function () {
+    return window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        window.oRequestAnimationFrame ||
+        window.msRequestAnimationFrame ||
+        function (callback) {
+            return window.setTimeout(callback, 1000 / 60);
+        };
+})();
+
+window.cancelRequestAnimFrame = (function () {
+    return window.cancelAnimationFrame ||
+        window.webkitCancelRequestAnimationFrame ||
+        window.mozCancelRequestAnimationFrame ||
+        window.oCancelRequestAnimationFrame ||
+        window.msCancelRequestAnimationFrame ||
+        clearTimeout
+})();
+
 //barra inferior do jogo
 var barBottom = { x: 100, y: 300, width: 100, height: 10 };
 
-var velocidade = 5;
+var velocidade = 1;
+
+var gPressed = false;
+
+var pPressed = false;
 
 var count = 0;
 
@@ -23,7 +48,7 @@ function init() {
 
     var ctx = setupCanvas(document.querySelector('canvas'));
     barBottom.y = canvas.height - barBottom.height;
-    setInterval(draw, 50);
+    setInterval(draw, 0.51);
 }
 
 function draw() {
@@ -42,7 +67,10 @@ function draw() {
     if (tiros.length != 0) {
         for (var t = 0; t < tiros.length; t++) {
             tiros[t].tiroRun(ctx);
-            if (tiros[t].tiroOutScreen() !== true) {
+            if (!tiros[t].tiroOutScreen() && count >= 10) {
+                tiros[t].impactoBolaRasante();
+            }
+            if (typeof tiros[t] !== 'undefined' && !tiros[t].tiroOutScreen()) {
                 tiros[t].impactoBola();
             }
         }
@@ -50,7 +78,7 @@ function draw() {
 
     if (blocos.length != 0) {
         for (let i = 0; i < blocos.length; i++) {
-            blocos[i].blocoRun(ctx);
+            blocos[i].blocoRun(ctx, velocidade);
             blocos[i].blocoOutScreen();
         }
     }

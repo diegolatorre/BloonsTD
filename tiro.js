@@ -2,7 +2,6 @@ function Tiro(x, y) {
     this.x = x;
     this.y = y;
     this.r = 4;
-    this.circunferencia = (2 * Math.PI) * this.r;
 }
 
 function newTiro(x, y) {
@@ -11,7 +10,7 @@ function newTiro(x, y) {
 }
 
 Tiro.prototype.tiroRun = function (ctx) {
-    this.y -= 30;
+    this.y -= 2;
     ctx.beginPath();
     ctx.fillStyle = 'blue';
     ctx.lineWeight = 2;
@@ -33,6 +32,20 @@ Tiro.prototype.impactoBola = function () {
             this.removeTiro();
         }
     }
+}
+
+Tiro.prototype.impactoBolaRasante = function () {
+    for (let i = 0; i < blocos.length; i++) {
+        var bloco = blocos[i];
+        op1 = (Math.max(bloco.x, this.x) - Math.min(bloco.x, this.x)) ** 2;
+        op2 = (Math.max(bloco.y, this.y) - Math.min(bloco.y, this.y)) ** 2;
+        d = Math.sqrt(op1 + op2);
+        if (d < bloco.r + this.r) {
+            showCount();
+            bloco.removeBloco();
+        }
+    }
+    this.tiroOutScreen();
 }
 
 Tiro.prototype.tiroOutScreen = function () {
