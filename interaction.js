@@ -16,7 +16,8 @@ function onKeyDown(ev) {
     }
     
     if (ev.keyCode == 40) { //Baixo
-        newBalao(barBottom.x + barBottom.width / 2, 0);
+        //newBalao(barBottom.x + barBottom.width / 2, 0);
+        started = false;
     }
     
     /*

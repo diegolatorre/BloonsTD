@@ -2,7 +2,6 @@ function Balao(x, y) {
     this.x = x;
     this.y = y;
     this.r = 10;
-    this.circunferencia = (2 * Math.PI) * this.r;
 }
 
 function newBalao(x, y, baloes) {
@@ -10,8 +9,8 @@ function newBalao(x, y, baloes) {
     baloes.push(balao);
 }
 
-Balao.prototype.balaoRun = function () {
-    this.y += fases[countFase].baloes.v;
+Balao.prototype.balaoRun = function (v) {
+    this.y += v;
 }
 
 Balao.prototype.balaoDraw = function (ctx) {
@@ -26,13 +25,15 @@ Balao.prototype.balaoDraw = function (ctx) {
 
 Balao.prototype.balaoOutScreen = function () {
     if (this.y > 500) {
-        this.removeBalao();
+        //this.removeBalao();
         perdeVida();
     }
 }
 
 Balao.prototype.removeBalao = function () {
-    var x = fases[countFase].baloes.indexOf(this);
-    fases[countFase].baloes.splice(x, 1);
+    /*var x = fases[countFase].baloes.indexOf(this);
+    fases[countFase].baloes.splice(x, 1);*/
+    this.x = -1000;
+    this.y = -1000;
     console.log('blocos: ' + fases[countFase].baloes.length);
 }

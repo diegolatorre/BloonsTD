@@ -10,7 +10,7 @@ function newTiro(x, y) {
 }
 
 Tiro.prototype.tiroRun = function (ctx) {
-    this.y -= 2;
+    this.y -= 10;
     ctx.beginPath();
     ctx.fillStyle = 'blue';
     ctx.lineWeight = 2;

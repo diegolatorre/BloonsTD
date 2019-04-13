@@ -40,10 +40,6 @@ var started = 1;
 
 var tiros = [];
 
-var i = 0;
-
-//var blocos = [];
-
 var fases = [];
 
 function init() {
@@ -57,12 +53,13 @@ function init() {
     document.addEventListener('keydown', onKeyDown, false);
 
     newFase(20, 1);
-    fases[0].startFase();
+    //fases[0].startFase();
     console.log(fases.length);
+    console.log(fases[0].baloes.length);
 
     var ctx = setupCanvas(document.querySelector('canvas'));
     barBottom.y = canvas.height - barBottom.height;
-    setInterval(draw, 0.51);
+    setInterval(draw, 1000 / 60);
 }
 
 function draw() {
@@ -82,8 +79,6 @@ function draw() {
 
     //ctx.save();
 
-    
-
     if (tiros.length != 0) {
         for (var t = 0; t < tiros.length; t++) {
             tiros[t].tiroRun(ctx);
@@ -96,11 +91,23 @@ function draw() {
         }
     }
 
+    if (fases[countFase].started == true) {
+        var intervalo = setInterval(function () {
+            fases[0].startFase();
+        }, 1000);
+        fases[countFase].started = false;
+    }
+
+    if (fases[countFase].baloes.length >= fases[countFase].n) {
+        clearInterval(intervalo);
+    }
+
     if (fases[countFase].baloes.length != 0) {
-            setTimeout(fases[countFase].baloes[i].balaoRun(ctx, velocidade), 5000);
-            setTimeout(fases[countFase].baloes[i].balaoDraw(ctx, velocidade), 5000);
+        for (let i = 0; i < fases[countFase].baloes.length; i++) {
+            fases[countFase].baloes[i].balaoDraw(ctx);
+            fases[countFase].baloes[i].balaoRun(fases[countFase].v);
             fases[countFase].baloes[i].balaoOutScreen();
-            i++;
+        }
     }
 
     ctx.beginPath();
