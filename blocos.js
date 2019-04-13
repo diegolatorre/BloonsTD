@@ -5,7 +5,7 @@ function Bloco(x, y) {
     this.circunferencia = (2 * Math.PI) * this.r;
 }
 
-function newBloco(x, y) {
+function newBloco(x, y, blocos) {
     var bloco = new Bloco(x, y);
     blocos.push(bloco);
 }

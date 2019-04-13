@@ -32,13 +32,17 @@ var tiroRasante = false;
 
 var count = 0;
 
+var countFase = 0;
+
 var life = 100;
 
 var started = 1;
 
 var tiros = [];
 
-var blocos = [];
+//var blocos = [];
+
+var fases = [];
 
 function init() {
     //EVENTO DO MOUSE
@@ -49,6 +53,10 @@ function init() {
 
     // EVENTOS DO TECLADO
     document.addEventListener('keydown', onKeyDown, false);
+
+    newFase(20, 1);
+    fases[0].startFase();
+    console.log(fases.length);
 
     var ctx = setupCanvas(document.querySelector('canvas'));
     barBottom.y = canvas.height - barBottom.height;
@@ -72,6 +80,8 @@ function draw() {
 
     //ctx.save();
 
+    
+
     if (tiros.length != 0) {
         for (var t = 0; t < tiros.length; t++) {
             tiros[t].tiroRun(ctx);
@@ -84,10 +94,10 @@ function draw() {
         }
     }
 
-    if (blocos.length != 0) {
-        for (let i = 0; i < blocos.length; i++) {
-            blocos[i].blocoRun(ctx, velocidade);
-            blocos[i].blocoOutScreen();
+    if (fases[countFase].baloes.length != 0) {
+        for (let i = 0; i < fases[countFase].baloes.length; i++) {
+            fases[countFase].baloes[i].blocoRun(ctx, velocidade);
+            fases[countFase].baloes[i].blocoOutScreen();
         }
     }
 
