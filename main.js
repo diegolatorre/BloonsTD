@@ -40,6 +40,8 @@ var started = 1;
 
 var tiros = [];
 
+var i = 0;
+
 //var blocos = [];
 
 var fases = [];
@@ -95,10 +97,10 @@ function draw() {
     }
 
     if (fases[countFase].baloes.length != 0) {
-        for (let i = 0; i < fases[countFase].baloes.length; i++) {
-            fases[countFase].baloes[i].blocoRun(ctx, velocidade);
-            fases[countFase].baloes[i].blocoOutScreen();
-        }
+            setTimeout(fases[countFase].baloes[i].balaoRun(ctx, velocidade), 5000);
+            setTimeout(fases[countFase].baloes[i].balaoDraw(ctx, velocidade), 5000);
+            fases[countFase].baloes[i].balaoOutScreen();
+            i++;
     }
 
     ctx.beginPath();

@@ -11,6 +11,6 @@ function newFase(n, v) {
 
 Fase.prototype.startFase = function () {
     for (let i = 0; i < this.n; i++) {
-        newBloco(Math.floor(Math.random() * (canvas.width - 1)) + 1, 0, this.baloes);
+        newBalao(Math.floor(Math.random() * (600 - 1)) + 1, 0, this.baloes);
     }
 }

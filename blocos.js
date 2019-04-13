@@ -1,17 +1,20 @@
-function Bloco(x, y) {
+function Balao(x, y) {
     this.x = x;
     this.y = y;
     this.r = 10;
     this.circunferencia = (2 * Math.PI) * this.r;
 }
 
-function newBloco(x, y, blocos) {
-    var bloco = new Bloco(x, y);
-    blocos.push(bloco);
+function newBalao(x, y, baloes) {
+    var balao = new Balao(x, y);
+    baloes.push(balao);
 }
 
-Bloco.prototype.blocoRun = function (ctx) {
-    this.y += velocidade;
+Balao.prototype.balaoRun = function () {
+    this.y += fases[countFase].baloes.v;
+}
+
+Balao.prototype.balaoDraw = function (ctx) {
     ctx.beginPath();
     ctx.fillStyle = 'black';
     ctx.lineWeight = 2;
@@ -21,15 +24,15 @@ Bloco.prototype.blocoRun = function (ctx) {
 }
 
 
-Bloco.prototype.blocoOutScreen = function blocoOutScreen() {
+Balao.prototype.balaoOutScreen = function () {
     if (this.y > 500) {
-        this.removeBloco();
+        this.removeBalao();
         perdeVida();
     }
 }
 
-Bloco.prototype.removeBloco = function () {
-    var x = blocos.indexOf(this);
-    blocos.splice(x, 1);
-    console.log('blocos: ' + blocos.length);
+Balao.prototype.removeBalao = function () {
+    var x = fases[countFase].baloes.indexOf(this);
+    fases[countFase].baloes.splice(x, 1);
+    console.log('blocos: ' + fases[countFase].baloes.length);
 }

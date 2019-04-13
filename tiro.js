@@ -21,28 +21,28 @@ Tiro.prototype.tiroRun = function (ctx) {
 
 
 Tiro.prototype.impactoBola = function () {
-    for (let i = 0; i < blocos.length; i++) {
-        var bloco = blocos[i];
-        op1 = (Math.max(bloco.x, this.x) - Math.min(bloco.x, this.x)) ** 2;
-        op2 = (Math.max(bloco.y, this.y) - Math.min(bloco.y, this.y)) ** 2;
+    for (let i = 0; i < fases[countFase].baloes.length; i++) {
+        var balao = fases[countFase].baloes[i];
+        op1 = (Math.max(balao.x, this.x) - Math.min(balao.x, this.x)) ** 2;
+        op2 = (Math.max(balao.y, this.y) - Math.min(balao.y, this.y)) ** 2;
         d = Math.sqrt(op1 + op2);
-        if (d < bloco.r + this.r) {
+        if (d < balao.r + this.r) {
             showCount();
-            bloco.removeBloco();
+            balao.removeBalao();
             this.removeTiro();
         }
     }
 }
 
 Tiro.prototype.impactoBolaRasante = function () {
-    for (let i = 0; i < blocos.length; i++) {
-        var bloco = blocos[i];
-        op1 = (Math.max(bloco.x, this.x) - Math.min(bloco.x, this.x)) ** 2;
-        op2 = (Math.max(bloco.y, this.y) - Math.min(bloco.y, this.y)) ** 2;
+    for (let i = 0; i < fases[countFase].baloes.length.length; i++) {
+        var balao = fases[countFase].baloes.length[i];
+        op1 = (Math.max(balao.x, this.x) - Math.min(balao.x, this.x)) ** 2;
+        op2 = (Math.max(balao.y, this.y) - Math.min(balao.y, this.y)) ** 2;
         d = Math.sqrt(op1 + op2);
-        if (d < bloco.r + this.r) {
+        if (d < balao.r + this.r) {
             showCount();
-            bloco.removeBloco();
+            balao.removeBalao();
         }
     }
     this.tiroOutScreen();
