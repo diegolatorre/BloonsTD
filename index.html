@@ -1,25 +1,97 @@
 <!DOCTYPE html>
+
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <title>Aula 20/03</title>
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <script src="main.js"></script>
-    <script src="tiro.js"></script>
-    <script src="setupCanvas.js"></script>
-    <script src="interaction.js"></script>
-    <script src="balao.js"></script>
-    <script src="menu.js"></script>
-    <script src="fase.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+
 </head>
-<body id="page" onload="init();">
-    <canvas id="canvas"></canvas>
-    <p id="life">100</p>
-    <p id="count">0</p>
-    <button id="encheVida" onclick="encheVida()">Enche Vida - Price 80</button>
-    <button id="dezVida" onclick="dezVida()">+10 Vida - Price 10</button>
-    <button id="tiroRasante" onclick="setTiroRasante()">Tiro Rasante - Price 30</button>
-    <button id="gravidadeZero" onclick="setGravidadeZero()">Gravidade Zero - Price 50</button>
-    <button id="congelar" onclick="setCongelar()">Congelar - Price 50</button>
+
+<body onload="init();">
+
+    <div class="conteudo">
+
+        <div class="direita">
+            <canvas id="canvas"></canvas>
+        </div>
+
+
+
+        <div class="esquerda">
+
+            <div class="loja">
+
+                <div class="ice">
+                    <img src="img/ice-cube.png" />
+                    <img id="maisIce" src="img/mais.png" /> <label id="lblMaisIce">30</label>
+                </div>
+
+                <div class="bala">
+                    <img src="img/bala.png" />
+                    <img id="maisBala" src="img/mais.png" /> <label id="lblMaisBala">30</label>
+                </div>
+
+                <div class="gravidade">
+                    <img src="img/gravidade.png" />
+                    <img id="maisGravidade" src="img/mais.png" /> <label id="lblMaisGravidade">30</label>
+                </div>
+
+                <div class="saldo">
+                    <img src="img/cifrao.png" /> <label id="lblSaldo">0</label>
+
+                </div>
+
+            </div>
+
+            <div class="status">
+
+                <div class="life">
+                    <img src="img/coracao.png" /> <label id="lblLife">100</label>
+
+                </div>
+
+                <div class="pontos">
+                    Pontos: <label id="lblPontos"></label>
+                </div>
+
+                <div class="ice">
+                    <img src="img/ice-cube.png" /> <label id="lblCongelar">0</label>
+                </div>
+
+                <div class="bala">
+                    <img src="img/bala.png" /> <label id="lblTiroRasante">0</label>
+                </div>
+
+                <div class="gravidade">
+                    <img src="img/gravidade.png" /> <label id="lblGravidadeZero">0</label>
+                </div>
+
+                <div class="start">
+                    <img src="img/start.png" />
+                </div>
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/tiro.js"></script>
+    <script src="js/setupCanvas.js"></script>
+    <script src="js/interaction.js"></script>
+    <script src="js/balao.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/fase.js"></script>
+
 </body>
+
 </html>

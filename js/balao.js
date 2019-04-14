@@ -24,8 +24,8 @@ Balao.prototype.balaoDraw = function (ctx) {
 
 
 Balao.prototype.balaoOutScreen = function () {
-    if (this.y > 500) {
-        //this.removeBalao();
+    if (this.y > canvas.height) {
+        this.removeBalao();
         perdeVida();
     }
 }
@@ -33,7 +33,7 @@ Balao.prototype.balaoOutScreen = function () {
 Balao.prototype.removeBalao = function () {
     /*var x = fases[countFase].baloes.indexOf(this);
     fases[countFase].baloes.splice(x, 1);*/
-    this.x = -1000;
-    this.y = -1000;
+    this.x = -10000000;
+    this.y = -10000000;
     console.log('blocos: ' + fases[countFase].baloes.length);
 }

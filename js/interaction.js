@@ -4,7 +4,8 @@ function onMouseMove(ev) {
 
 function onKeyDown(ev) {
     if (ev.keyCode == 39) { //Direita
-        barBottom.x += 100;
+        //barBottom.x += 100;
+        setTiroRasante();
     }
 
     if (ev.keyCode == 37) { //Esquerda

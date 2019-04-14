@@ -30,6 +30,12 @@ var congelar = false;
 
 var tiroRasante = false;
 
+var nGravidadeZero = 0;
+
+var nCongelar = 0;
+
+var nTiroRasante = 0;
+
 var count = 0;
 
 var countFase = 0;
@@ -41,6 +47,8 @@ var started = 1;
 var tiros = [];
 
 var fases = [];
+
+var intervalo;
 
 function init() {
     //EVENTO DO MOUSE
@@ -74,6 +82,7 @@ function draw() {
     var ctx = setupCanvas(document.querySelector('canvas'));
     var ctx = canvas.getContext('2d');
 
+    console.log(fases[0].baloes.length);
     // Limpa o canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -92,7 +101,7 @@ function draw() {
     }
 
     if (fases[countFase].started == true) {
-        var intervalo = setInterval(function () {
+        intervalo = setInterval(function () {
             fases[0].startFase();
         }, 1000);
         fases[countFase].started = false;
@@ -100,6 +109,7 @@ function draw() {
 
     if (fases[countFase].baloes.length >= fases[countFase].n) {
         clearInterval(intervalo);
+        //started = 0;
     }
 
     if (fases[countFase].baloes.length != 0) {
@@ -118,7 +128,9 @@ function draw() {
 
 function showCount() {
     count++;
-    document.getElementById("count").innerHTML = count;
+    saldo++;
+    document.getElementById("lblPontos").innerHTML = count;
+    document.getElementById("lblSaldo").innerHTML = saldo;
 }
 
 function gameOver() {
@@ -132,9 +144,9 @@ function perdeVida() {
     life -= 15;
     if (life < 0) {
         life = 0;
-        document.getElementById("life").innerHTML = life;
+        document.getElementById("lblLife").innerHTML = life;
     } else {
-        document.getElementById("life").innerHTML = life;
+        document.getElementById("lblLife").innerHTML = life;
     }
 }
 
