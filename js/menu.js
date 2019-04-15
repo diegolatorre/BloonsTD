@@ -131,7 +131,7 @@ function usarCongelar() {
 function iniciar () {
     intervalo = setInterval(function () {
         fases[countFase].startFase();
-    }, 1000);
+    }, fases[countFase].tempo);
     fases[countFase].started = true;
     started = 1;
 }

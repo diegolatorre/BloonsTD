@@ -63,9 +63,7 @@ function init() {
     // EVENTOS DO TECLADO
     document.addEventListener('keydown', onKeyDown, false);
 
-    for (let i = 0; i < 10; i++) {
-        newFase((i + 1) * 10, i + 0.5);
-    }
+   iniciarFases();
 
     var ctx = setupCanvas(document.querySelector('canvas'));
     barBottom.y = canvas.height - barBottom.height;
