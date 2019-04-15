@@ -6,13 +6,14 @@ body{
 canvas {
     height: 100%;
     width: 100%;
+    cursor: none;
 }
 
 .conteudo{
     width: 100%;
     height: auto;
     position: absolute;
-    background-color: blueviolet;
+    background-color: gray;
 }
 
 .direita{
@@ -89,6 +90,12 @@ canvas {
 .start{
     float: right;
     margin-top: -100px;
+}
+
+.start:hover{
+    float: right;
+    margin-top: -100px;
+    cursor: pointer;
 }
 
 .start img{

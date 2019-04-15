@@ -2,7 +2,7 @@ function Fase(n, v) {
     this.n = n;
     this.v = v;
     this.baloes = [];
-    this.started = true;
+    this.started = false;
 }
 
 function newFase(n, v) {

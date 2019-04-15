@@ -22,10 +22,13 @@ window.cancelRequestAnimFrame = (function () {
 //barra inferior do jogo
 var barBottom = { x: 100, y: 300, width: 100, height: 10 };
 
-var velocidade = 1;
+//velocidade para GravidadeZero e Congelar
+var velocidade = 0;
 
+//se gravidadeZero está ativo
 var gravidadeZero = false;
 
+//se congelar está ativo
 var congelar = false;
 
 var tiroRasante = false;
@@ -60,10 +63,9 @@ function init() {
     // EVENTOS DO TECLADO
     document.addEventListener('keydown', onKeyDown, false);
 
-    newFase(20, 1);
-    //fases[0].startFase();
-    console.log(fases.length);
-    console.log(fases[0].baloes.length);
+    for (let i = 0; i < 10; i++) {
+        newFase((i + 1) * 10, i + 0.5);
+    }
 
     var ctx = setupCanvas(document.querySelector('canvas'));
     barBottom.y = canvas.height - barBottom.height;
@@ -79,10 +81,11 @@ function draw() {
         gameOver();
     }
 
+    document.getElementById("fase").innerHTML = countFase + 1;
+
     var ctx = setupCanvas(document.querySelector('canvas'));
     var ctx = canvas.getContext('2d');
 
-    console.log(fases[0].baloes.length);
     // Limpa o canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -100,22 +103,24 @@ function draw() {
         }
     }
 
-    if (fases[countFase].started == true) {
-        intervalo = setInterval(function () {
-            fases[0].startFase();
-        }, 1000);
-        fases[countFase].started = false;
-    }
-
     if (fases[countFase].baloes.length >= fases[countFase].n) {
         clearInterval(intervalo);
-        //started = 0;
+    }
+
+    if (verificaFase() && fases[countFase].started == true) {
+        started = 0;
+        fases[countFase].started = false;
+        countFase += 1;
     }
 
     if (fases[countFase].baloes.length != 0) {
         for (let i = 0; i < fases[countFase].baloes.length; i++) {
             fases[countFase].baloes[i].balaoDraw(ctx);
-            fases[countFase].baloes[i].balaoRun(fases[countFase].v);
+            if (congelar || gravidadeZero) {
+                fases[countFase].baloes[i].balaoRun(velocidade);
+            } else {
+                fases[countFase].baloes[i].balaoRun(fases[countFase].v);
+            }
             fases[countFase].baloes[i].balaoOutScreen();
         }
     }
@@ -152,4 +157,19 @@ function perdeVida() {
 
 function startGame() {
     started = true;
+}
+
+function verificaFase() {
+    let verifica = 0;
+    for (let i = 0; i < fases[countFase].baloes.length; i++) {
+        if (fases[countFase].baloes[i].x == -10000000) {
+            verifica += 1;
+        }
+    }
+
+    if (verifica == fases[countFase].n) {
+        return true;
+    } else {
+        return false;
+    }
 }

@@ -59,5 +59,4 @@ Tiro.prototype.tiroOutScreen = function () {
 Tiro.prototype.removeTiro = function () {
     var x = tiros.indexOf(this);
     tiros.splice(x, 1);
-    console.log('tiros: ' + tiros.length);
 }

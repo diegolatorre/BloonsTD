@@ -35,5 +35,4 @@ Balao.prototype.removeBalao = function () {
     fases[countFase].baloes.splice(x, 1);*/
     this.x = -10000000;
     this.y = -10000000;
-    console.log('blocos: ' + fases[countFase].baloes.length);
 }

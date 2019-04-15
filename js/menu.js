@@ -1,6 +1,10 @@
 document.getElementById("maisIce").addEventListener("click", comprarCongelar);
 document.getElementById("maisBala").addEventListener("click", comprarTiroRasante);
 document.getElementById("maisGravidade").addEventListener("click", comprarGravidadeZero);
+document.getElementById("setCongelar").addEventListener("click", usarCongelar);
+document.getElementById("setTiroRasante").addEventListener("click", usarTiroRasante);
+document.getElementById("setGravidadeZero").addEventListener("click", usarGravidadeZero);
+document.getElementById("start").addEventListener("click", iniciar);
 
 //Declarando o preco dos poderes
 var valorCongelar = 1;
@@ -63,51 +67,70 @@ function encheVida() {
     }
 }
 
-function setTiroRasante() {
-    if (count >= 10) {
+function usarTiroRasante() {
+    if (nTiroRasante > 0) {
         if (tiroRasante == false) {
-            count -= 10;
             tiroRasante = true;
-            return;
-        }
-
-        if (tiroRasante == true) {
-            tiroRasante = false;
+            setTimeout(function () {
+                usarTiroRasante();
+            }, 1000 * 10);
+            nTiroRasante -= 1;
+            document.getElementById("lblTiroRasante").innerHTML = nTiroRasante;
             return;
         }
     }
+
+    if (tiroRasante == true) {
+        tiroRasante = false;
+        return;
+    }
 }
 
-function setGravidadeZero() {
-    if (count >= 10) {
+function usarGravidadeZero() {
+    if (nGravidadeZero > 0) {
         if (gravidadeZero == false) {
-            count -= 10;
             velocidade = 0.2;
             gravidadeZero = true;
+            setTimeout(function () {
+                usarGravidadeZero();
+            }, 1000 * 10);
+            nGravidadeZero -= 1;
+            document.getElementById("lblGravidadeZero").innerHTML = nGravidadeZero;
             return;
         }
+    }
 
-        if (gravidadeZero == true) {
-            velocidade = 1;
-            gravidadeZero = false;
-            return;
-        }
+    if (gravidadeZero == true) {
+        velocidade = 1;
+        gravidadeZero = false;
+        return;
     }
 }
 
-function setCongelar() {
-    if (count >= 10) {
+function usarCongelar() {
+    if (nCongelar > 0) {
         if (congelar == false) {
-            count -= 10;
             velocidade = 0;
             congelar = true;
-            return;
-        }
-
-        if (congelar == true) {
-            velocidade = 1;
-            congelar = false;
+            setTimeout(function () {
+                usarCongelar();
+            }, 1000 * 10);
+            nCongelar -= 1;
+            document.getElementById("lblCongelar").innerHTML = nCongelar;
             return;
         }
     }
+    if (congelar == true) {
+        velocidade = 1;
+        congelar = false;
+        return;
+    }
+}
+
+function iniciar () {
+    intervalo = setInterval(function () {
+        fases[countFase].startFase();
+    }, 1000);
+    fases[countFase].started = true;
+    started = 1;
 }
