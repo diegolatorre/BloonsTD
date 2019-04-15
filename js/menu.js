@@ -112,18 +112,19 @@ function usarCongelar() {
         if (congelar == false) {
             velocidade = 0;
             congelar = true;
+            clearInterval(intervalo);
             setTimeout(function () {
                 usarCongelar();
+                velocidade = 1;
+                congelar = false;
+                intervalo = setInterval(function () {
+                    fases[countFase].startFase();
+                }, 1000);
             }, 1000 * 10);
             nCongelar -= 1;
             document.getElementById("lblCongelar").innerHTML = nCongelar;
             return;
         }
-    }
-    if (congelar == true) {
-        velocidade = 1;
-        congelar = false;
-        return;
     }
 }
 
