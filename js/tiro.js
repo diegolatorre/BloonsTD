@@ -1,7 +1,7 @@
 function Tiro(x, y) {
     this.x = x;
     this.y = y;
-    this.r = 4;
+    this.r = 25;
 }
 
 function newTiro(x, y) {
@@ -12,10 +12,12 @@ function newTiro(x, y) {
 Tiro.prototype.tiroRun = function (ctx) {
     this.y -= 10;
     ctx.beginPath();
-    ctx.fillStyle = 'blue';
-    ctx.lineWeight = 2;
+    //ctx.fillStyle = 'blue';
+    ctx.lineWeight = 1;
     ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
-    ctx.fill();
+    ctx.drawImage(imgDardo, this.x - 25, this.y - 25, 50, 50);
+    //ctx.fill();
+    ctx.stroke();
     ctx.closePath();
 }
 
@@ -35,8 +37,8 @@ Tiro.prototype.impactoBola = function () {
 }
 
 Tiro.prototype.impactoBolaRasante = function () {
-    for (let i = 0; i < fases[countFase].baloes.length.length; i++) {
-        var balao = fases[countFase].baloes.length[i];
+    for (let i = 0; i < fases[countFase].baloes.length; i++) {
+        var balao = fases[countFase].baloes[i];
         op1 = (Math.max(balao.x, this.x) - Math.min(balao.x, this.x)) ** 2;
         op2 = (Math.max(balao.y, this.y) - Math.min(balao.y, this.y)) ** 2;
         d = Math.sqrt(op1 + op2);

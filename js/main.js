@@ -53,6 +53,8 @@ var fases = [];
 
 var intervalo;
 
+var imgDardo  = document.getElementById("dardo");
+
 function init() {
     //EVENTO DO MOUSE
     canvas.addEventListener('mousemove', onMouseMove, false);
@@ -92,10 +94,10 @@ function draw() {
     if (tiros.length != 0) {
         for (var t = 0; t < tiros.length; t++) {
             tiros[t].tiroRun(ctx);
-            if (!tiros[t].tiroOutScreen() && tiroRasante == true) {
+            if (tiroRasante == true) {
                 tiros[t].impactoBolaRasante();
             }
-            if (typeof tiros[t] !== 'undefined' && !tiros[t].tiroOutScreen()) {
+            if (typeof tiros[t] !== 'undefined' && tiroRasante == false) {
                 tiros[t].impactoBola();
             }
         }
