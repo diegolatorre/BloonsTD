@@ -12,11 +12,11 @@ function newFase(n, v, tempo) {
 }
 
 Fase.prototype.startFase = function () {
-    newBalao(Math.floor(Math.random() * (597 - 3)) + 1, 0, this.baloes);
+    newBalao(Math.floor(Math.random() * (597 - 8)) + 8, 0, this.baloes);
 }
 
 function iniciarFases() {
-    newFase(10, 0.5, 1000);
+    newFase(10, 0.5, 500);
     newFase(15, 0.5, 800);
     newFase(20, 1, 1000);
     newFase(25, 1, 800);

@@ -72,7 +72,7 @@ function usarTiroRasante() {
         if (tiroRasante == false) {
             tiroRasante = true;
             setTimeout(function () {
-                usarTiroRasante();
+                tiroRasante = false;
             }, 1000 * 10);
             nTiroRasante -= 1;
             document.getElementById("lblTiroRasante").innerHTML = nTiroRasante;
@@ -114,7 +114,6 @@ function usarCongelar() {
             congelar = true;
             clearInterval(intervalo);
             setTimeout(function () {
-                usarCongelar();
                 velocidade = 1;
                 congelar = false;
                 intervalo = setInterval(function () {

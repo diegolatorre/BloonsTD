@@ -106,7 +106,6 @@ function draw() {
     }
 
     if (verificaFase() && fases[countFase].started == true) {
-        started = 0;
         fases[countFase].started = false;
         countFase += 1;
     }
