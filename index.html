@@ -11,12 +11,15 @@
 
     <div class="esquerda">
 
-        <label>Fase: </label>
-        <label id="fase">0</label>
-
+        <div class="fase">
+            <h1>Fase: </h1>
+            <label id="fase">0</label>
+        </div>
 
         <div class="start">
             <label>Start: </label>
+            <br>
+            <br>
             <img id="start" src="img/start.png" />
         </div>
 
@@ -29,18 +32,28 @@
     <div class="direita">
 
         <div class="ice">
-            <img src="img/snowflake.png" />
-            <img id="maisIce" src="img/mais.png" /> <label id="lblMaisIce">30</label>
+            <img id="imgCongelar" src="img/snowflake.png" />
+            <img class="maisImg" id="maisIce" src="img/mais.png" /> <label id="lblMaisIce">30</label>
         </div>
 
         <div class="bala">
-            <img src="img/bala.png" />
-            <img id="maisBala" src="img/mais.png" /> <label id="lblMaisBala">30</label>
+            <img id="imgBala" src="img/bala.png" />
+            <img class="maisImg" id="maisBala" src="img/mais.png" /> <label id="lblMaisBala">30</label>
         </div>
 
         <div class="gravidade">
-            <img src="img/astronaut.png" />
-            <img id="maisGravidade" src="img/mais.png" /> <label id="lblMaisGravidade">30</label>
+            <img id="imgGravidade" src="img/astronaut.png" />
+            <img class="maisImg" id="maisGravidade" src="img/mais.png" /> <label id="lblMaisGravidade">50</label>
+        </div>
+
+        <div class="lifeDez">
+            <img id="imgLifeDez" src="img/coracao.png" />
+            <img class="maisImg" id="lifeDez" src="img/mais.png" /> <label id="lblLifeDez">30</label>
+        </div>
+
+        <div class="lifeFull">
+            <img id="imgLifeFull" src="img/coracao.png" />
+            <img class="maisImg" id="lifeFull" src="img/mais.png" /> <label id="lblLifeFull">100</label>
         </div>
 
         <div class="saldo">
@@ -50,7 +63,6 @@
 
         <div class="life">
             <img src="img/coracao.png" /> <label id="lblLife">100</label>
-
         </div>
 
         <div class="pontos">

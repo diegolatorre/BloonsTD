@@ -1,17 +1,19 @@
 document.getElementById("maisIce").addEventListener("click", comprarCongelar);
 document.getElementById("maisBala").addEventListener("click", comprarTiroRasante);
 document.getElementById("maisGravidade").addEventListener("click", comprarGravidadeZero);
+document.getElementById("lifeDez").addEventListener("click", dezVida);
+document.getElementById("lifeFull").addEventListener("click", encheVida);
 document.getElementById("setCongelar").addEventListener("click", usarCongelar);
 document.getElementById("setTiroRasante").addEventListener("click", usarTiroRasante);
 document.getElementById("setGravidadeZero").addEventListener("click", usarGravidadeZero);
 document.getElementById("start").addEventListener("click", iniciar);
 
 //Declarando o preco dos poderes
-var valorCongelar = 1;
+var valorCongelar = 30;
 var valorVidaCheia = 100;
 var valorDezVida = 1;
-var valorTiroRasante = 1;
-var valorGravidadeZero = 1;
+var valorTiroRasante = 30;
+var valorGravidadeZero = 50;
 
 //Declarando e recebendo o saldo atual
 var saldo = 0;
@@ -53,17 +55,21 @@ function dezVida() {
     if (saldo >= valorDezVida) {
         saldo -= 10;
         life += 10;
-        document.getElementById("life").innerHTML = life;
+        document.getElementById("lblLife").innerHTML = life;
         document.getElementById("lblSaldo").innerHTML = saldo;
     }
 }
 
 function encheVida() {
-    if (count >= 80) {
-        count -= 100;
+    if (saldo >= valorVidaCheia) {
+        saldo -= 1;
         life += 100;
-        document.getElementById("life").innerHTML = life;
-        document.getElementById("count").innerHTML = count;
+    }
+
+    if (life > 100) {
+        life = 100;
+        document.getElementById("lblLife").innerHTML = life;
+        document.getElementById("lblSaldo").innerHTML = saldo;
     }
 }
 
@@ -127,7 +133,7 @@ function usarCongelar() {
     }
 }
 
-function iniciar () {
+function iniciar() {
     intervalo = setInterval(function () {
         fases[countFase].startFase();
     }, fases[countFase].tempo);
