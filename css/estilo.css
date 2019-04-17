@@ -43,6 +43,27 @@ canvas {
     background-color: aqua;
 }
 
+.start {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 10%;
+    background-color: white;
+    padding: 0;
+    border: 0;
+    margin: 0;
+    top: 95%;
+}
+
+#start {
+    position: relative;
+    float: left;
+    width: 20%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    left: 60%;
+}
 
 .loja{
     width: 100%;
