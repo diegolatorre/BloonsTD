@@ -22,7 +22,7 @@ Tiro.prototype.tiroRun = function (ctx) {
 }
 
 
-Tiro.prototype.impactoBola = function () {
+Tiro.prototype.impactoBola = function (ctx) {
     for (let i = 0; i < fases[countFase].baloes.length; i++) {
         var balao = fases[countFase].baloes[i];
         op1 = (Math.max(balao.x, this.x) - Math.min(balao.x, this.x)) ** 2;
@@ -30,13 +30,14 @@ Tiro.prototype.impactoBola = function () {
         d = Math.sqrt(op1 + op2);
         if (d < balao.r + this.r) {
             showCount();
-            balao.removeBalao();
+            popSound.play();
+            balao.removeBalao(ctx);
             this.removeTiro();
         }
     }
 }
 
-Tiro.prototype.impactoBolaRasante = function () {
+Tiro.prototype.impactoBolaRasante = function (ctx) {
     for (let i = 0; i < fases[countFase].baloes.length; i++) {
         var balao = fases[countFase].baloes[i];
         op1 = (Math.max(balao.x, this.x) - Math.min(balao.x, this.x)) ** 2;
@@ -44,7 +45,8 @@ Tiro.prototype.impactoBolaRasante = function () {
         d = Math.sqrt(op1 + op2);
         if (d < balao.r + this.r) {
             showCount();
-            balao.removeBalao();
+            popSound.play();
+            balao.removeBalao(ctx);
         }
     }
     this.tiroOutScreen();

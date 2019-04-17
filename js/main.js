@@ -64,6 +64,10 @@ var imgBalao = document.getElementById("balao");
 
 var canvasBackground = document.getElementById("canvasBackground");
 
+var imgPow = document.getElementById("pow");
+
+var popSound = document.getElementById("pop");; 
+
 function init() {
 
     var ctx = setupCanvas(document.querySelector('canvas'));
@@ -78,7 +82,6 @@ function init() {
     document.addEventListener('keydown', onKeyDown, false);
 
     iniciarFases();
-
 
     barBottom.y = canvas.height - barBottom.height;
 
@@ -108,10 +111,10 @@ function draw() {
         for (var t = 0; t < tiros.length; t++) {
             tiros[t].tiroRun(ctx);
             if (tiroRasante == true) {
-                tiros[t].impactoBolaRasante();
+                tiros[t].impactoBolaRasante(ctx);
             }
             if (typeof tiros[t] !== 'undefined' && tiroRasante == false) {
-                tiros[t].impactoBola();
+                tiros[t].impactoBola(ctx);
             }
         }
     }
