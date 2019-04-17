@@ -13,7 +13,8 @@ Balao.prototype.balaoRun = function (v) {
     this.y += v;
 }
 
-Balao.prototype.balaoDraw = function (ctx) {
+Balao.prototype.balaoDraw = function (ctx, v) {
+    this.y += v;
     ctx.beginPath();
     //ctx.fillStyle = 'black';
     ctx.lineWeight = 1;
@@ -33,6 +34,14 @@ Balao.prototype.balaoOutScreen = function () {
 }
 
 Balao.prototype.removeBalao = function (ctx) {
+    /*var x = fases[countFase].baloes.indexOf(this);
+    fases[countFase].baloes.splice(x, 1);*/
+    //ctx.drawImage(imgPow, this.x - 12, this.y - 12, 40, 40);
+    this.x = -10000000;
+    this.y = -10000000;
+}
+
+Balao.prototype.removeBalaoImpacto = function (ctx) {
     /*var x = fases[countFase].baloes.indexOf(this);
     fases[countFase].baloes.splice(x, 1);*/
     ctx.drawImage(imgPow, this.x - 12, this.y - 12, 40, 40);

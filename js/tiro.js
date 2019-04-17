@@ -31,7 +31,7 @@ Tiro.prototype.impactoBola = function (ctx) {
         if (d < balao.r + this.r) {
             showCount();
             popSound.play();
-            balao.removeBalao(ctx);
+            balao.removeBalaoImpacto(ctx);
             this.removeTiro();
         }
     }
@@ -46,7 +46,7 @@ Tiro.prototype.impactoBolaRasante = function (ctx) {
         if (d < balao.r + this.r) {
             showCount();
             popSound.play();
-            balao.removeBalao(ctx);
+            balao.removeBalaoImpacto(ctx);
         }
     }
     this.tiroOutScreen();

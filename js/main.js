@@ -132,13 +132,13 @@ function draw() {
 
     if (fases[countFase].baloes.length != 0) {
         for (let i = 0; i < fases[countFase].baloes.length; i++) {
-            fases[countFase].baloes[i].balaoDraw(ctx);
             if (congelar || gravidadeZero) {
-                fases[countFase].baloes[i].balaoRun(velocidade);
+                fases[countFase].baloes[i].balaoDraw(ctx, velocidade);
+                fases[countFase].baloes[i].balaoOutScreen();
             } else {
-                fases[countFase].baloes[i].balaoRun(fases[countFase].v);
+                fases[countFase].baloes[i].balaoDraw(ctx, fases[countFase].v);
+                fases[countFase].baloes[i].balaoOutScreen();
             }
-            fases[countFase].baloes[i].balaoOutScreen();
         }
     }
 
