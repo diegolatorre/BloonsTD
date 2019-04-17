@@ -8,82 +8,72 @@
 </head>
 
 <body onload="init();">
-    
-    <div class="conteudo">
 
-        <div class="direita">
-            <canvas id="canvas"></canvas>
-        </div>
+    <div class="esquerda">
 
-        <div class="esquerda">
+        <label id="fase">0</label>
+        <img id="start" src="img/start.png" />
 
-            <div class="loja">
-
-                <div class="ice">
-                    <img src="img/snowflake.png" />
-                    <img id="maisIce" src="img/mais.png" /> <label id="lblMaisIce">30</label>
-                </div>
-
-                <div class="bala">
-                    <img src="img/bala.png" />
-                    <img id="maisBala" src="img/mais.png" /> <label id="lblMaisBala">30</label>
-                </div>
-
-                <div class="gravidade">
-                    <img src="img/astronaut.png" />
-                    <img id="maisGravidade" src="img/mais.png" /> <label id="lblMaisGravidade">30</label>
-                </div>
-
-                <div class="saldo">
-                    <img src="img/cifrao.png" /> <label id="lblSaldo">0</label>
-
-                </div>
-
-            </div>
-
-            <div class="status">
-
-                <div class="life">
-                    <img src="img/coracao.png" /> <label id="lblLife">100</label>
-
-                </div>
-
-                <div class="pontos">
-                    Pontos: <label id="lblPontos"></label>
-                </div>
-
-                <div class="ice">
-                    <img id="setCongelar" src="img/snowflake.png" /> <label id="lblCongelar">0</label>
-                </div>
-
-                <div class="bala">
-                    <img id="setTiroRasante" src="img/bala.png" /> <label id="lblTiroRasante">0</label>
-                </div>
-
-                <div class="gravidade">
-                    <img id="setGravidadeZero" src="img/astronaut.png" /> <label id="lblGravidadeZero">0</label>
-                </div>
-
-                <div class="start">
-                    <img id="start" src="img/start.png" /><label id="fase">0</label>
-                </div>
-
-
-            </div>
-
-
-
-
-        </div>
 
     </div>
 
-    <img id="dardo" class="esconder" src="img/dardo.png" />
-    <img id="monkey" class="esconder" src="img/monkey.png" />
-    <img id="monkeyAtirando" class="esconder" src="img/monkeyAtirando.png" />
-    <img id="balao" class="esconder" src="img/balao.png" />
-    <img id="canvasBackground" class="esconder" src="img/canvasBackground.png" />
-    <img id="pow" class="esconder" src="img/pow.png" />
+    <div class="centro">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <div class="direita">
+
+        <div class="ice">
+            <img src="img/snowflake.png" />
+            <img id="maisIce" src="img/mais.png" /> <label id="lblMaisIce">30</label>
+        </div>
+
+        <div class="bala">
+            <img src="img/bala.png" />
+            <img id="maisBala" src="img/mais.png" /> <label id="lblMaisBala">30</label>
+        </div>
+
+        <div class="gravidade">
+            <img src="img/astronaut.png" />
+            <img id="maisGravidade" src="img/mais.png" /> <label id="lblMaisGravidade">30</label>
+        </div>
+
+        <div class="saldo">
+            <img src="img/cifrao.png" /> <label id="lblSaldo">0</label>
+
+        </div>
+
+        <div class="life">
+            <img src="img/coracao.png" /> <label id="lblLife">100</label>
+
+        </div>
+
+        <div class="pontos">
+            Pontos: <label id="lblPontos"></label>
+        </div>
+
+        <div class="ice">
+            <img id="setCongelar" src="img/snowflake.png" /> <label id="lblCongelar">0</label>
+        </div>
+
+        <div class="bala">
+            <img id="setTiroRasante" src="img/bala.png" /> <label id="lblTiroRasante">0</label>
+        </div>
+
+        <div class="gravidade">
+            <img id="setGravidadeZero" src="img/astronaut.png" /> <label id="lblGravidadeZero">0</label>
+        </div>
+
+
+
+    </div>
+
+    <img id="dardo" class="esconder" src="img/dardo.png" style="display:none;" />
+    <img id="monkey" class="esconder" src="img/monkey.png" style="display:none;" />
+    <img id="monkeyAtirando" class="esconder" src="img/monkeyAtirando.png" style="display:none;" />
+    <img id="balao" class="esconder" src="img/balao.png" style="display:none;" />
+    <img id="canvasBackground" class="esconder" src="img/canvasBackground.png" style="display:none;" />
+    <img id="pow" class="esconder" src="img/pow.png" style="display:none;" />
     <audio id="pop" src="sound/pop.mp3"></audio>
     <script src="js/main.js"></script>
     <script src="js/tiro.js"></script>

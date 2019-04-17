@@ -21,7 +21,7 @@ window.cancelRequestAnimFrame = (function () {
 
 
 //barra inferior do jogo
-var barBottom = { x: 100, y: 300, width: 100, height: 50 };
+var barBottom = { x: 0, y: 0 };
 
 //velocidade para GravidadeZero e Congelar
 var velocidade = 0;
@@ -66,11 +66,12 @@ var canvasBackground = document.getElementById("canvasBackground");
 
 var imgPow = document.getElementById("pow");
 
-var popSound = document.getElementById("pop");; 
+var popSound = document.getElementById("pop");;
 
 function init() {
 
     var ctx = setupCanvas(document.querySelector('canvas'));
+    var ctx = canvas.getContext('2d');
 
     //EVENTO DO MOUSE
     canvas.addEventListener('mousemove', onMouseMove, false);
@@ -83,7 +84,8 @@ function init() {
 
     iniciarFases();
 
-    barBottom.y = canvas.height - barBottom.height;
+    barBottom.x = 0;
+    barBottom.y = canvas.height - 50;
 
     setInterval(draw, 1000 / 60);
 }
@@ -105,7 +107,7 @@ function draw() {
     // Limpa o canvas
     //ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    ctx.drawImage(canvasBackground, 0, 0, 800, 800);
+    ctx.drawImage(canvasBackground, 0, 0, canvas.width, canvas.height);
 
     if (tiros.length != 0) {
         for (var t = 0; t < tiros.length; t++) {

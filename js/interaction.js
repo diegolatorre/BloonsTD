@@ -1,5 +1,5 @@
 function onMouseMove(ev) {
-    barBottom.x = ev.x - Math.floor(barBottom.width / 2);
+    barBottom.x = ev.x - 350;
 }
 
 function onKeyDown(ev) {
@@ -7,11 +7,11 @@ function onKeyDown(ev) {
         usarCongelar()
     }
 
-    if (ev.keyCode == 50) { //1
+    if (ev.keyCode == 50) { //2
         usarTiroRasante()
     }
 
-    if (ev.keyCode == 51) { //1
+    if (ev.keyCode == 51) { //3
         usarGravidadeZero()
     }
 }
