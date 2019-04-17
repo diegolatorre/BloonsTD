@@ -17,7 +17,12 @@ Fase.prototype.startFase = function () {
 
 function iniciarFases() {
     newFase(10, 0.5, 500);
-    newFase(15, 0.5, 800);
-    newFase(20, 1, 1000);
-    newFase(25, 1, 800);
+    newFase(15, 1, 800);
+    newFase(20, 2, 1000);
+    newFase(25, 2, 800);
+    newFase(30, 2, 500);
+    newFase(40, 3, 1000);
+    newFase(50, 3, 500);
+    newFase(60, 4, 1000);
+    newFase(50, 4, 500);
 }
