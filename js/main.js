@@ -19,8 +19,9 @@ window.cancelRequestAnimFrame = (function () {
         clearTimeout
 })();
 
+
 //barra inferior do jogo
-var barBottom = { x: 100, y: 300, width: 100, height: 10 };
+var barBottom = { x: 100, y: 300, width: 100, height: 50 };
 
 //velocidade para GravidadeZero e Congelar
 var velocidade = 0;
@@ -53,9 +54,20 @@ var fases = [];
 
 var intervalo;
 
-var imgDardo  = document.getElementById("dardo");
+var imgDardo = document.getElementById("dardo");
+
+var imgMonkey = document.getElementById("monkey");
+
+var imgMonkeyAtirando = document.getElementById("monkeyAtirando");
+
+var imgBalao = document.getElementById("balao");
+
+var canvasBackground = document.getElementById("canvasBackground");
 
 function init() {
+
+    var ctx = setupCanvas(document.querySelector('canvas'));
+
     //EVENTO DO MOUSE
     canvas.addEventListener('mousemove', onMouseMove, false);
 
@@ -65,10 +77,11 @@ function init() {
     // EVENTOS DO TECLADO
     document.addEventListener('keydown', onKeyDown, false);
 
-   iniciarFases();
+    iniciarFases();
 
-    var ctx = setupCanvas(document.querySelector('canvas'));
+
     barBottom.y = canvas.height - barBottom.height;
+
     setInterval(draw, 1000 / 60);
 }
 
@@ -87,9 +100,9 @@ function draw() {
     var ctx = canvas.getContext('2d');
 
     // Limpa o canvas
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    //ctx.save();
+    ctx.drawImage(canvasBackground, 0, 0, 800, 800);
 
     if (tiros.length != 0) {
         for (var t = 0; t < tiros.length; t++) {
@@ -125,9 +138,9 @@ function draw() {
     }
 
     ctx.beginPath();
-    ctx.fillStyle = 'gray';
-    ctx.fillRect(barBottom.x, barBottom.y, barBottom.width, barBottom.height);
-    //ctx.restore();
+    ctx.drawImage(imgMonkey, barBottom.x, barBottom.y, 50, 50);
+    ctx.closePath();
+
 }
 
 function showCount() {

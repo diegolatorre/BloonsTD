@@ -3,54 +3,19 @@ function onMouseMove(ev) {
 }
 
 function onKeyDown(ev) {
-    if (ev.keyCode == 39) { //Direita
-        //barBottom.x += 100;
-        setTiroRasante();
+    if (ev.keyCode == 49) { //1
+        usarCongelar()
     }
 
-    if (ev.keyCode == 37) { //Esquerda
-        barBottom.x -= 100;
+    if (ev.keyCode == 50) { //1
+        usarTiroRasante()
     }
 
-    if (ev.keyCode == 38) { //Cima
-        newTiro(barBottom.x + barBottom.width / 2, barBottom.y);
+    if (ev.keyCode == 51) { //1
+        usarGravidadeZero()
     }
-    
-    if (ev.keyCode == 40) { //Baixo
-        //newBalao(barBottom.x + barBottom.width / 2, 0);
-        started = false;
-    }
-    
-    /*
-    if (ev.keyCode == 71) { //G
-        if (gPressed == false) {
-            velocidade = 0.2;
-            gPressed = true;
-            return;
-        } 
-        
-        if (gPressed == true) {
-            velocidade = 1;
-            gPressed = false;
-            return;
-        }
-    }
-
-    if (ev.keyCode == 80) { //P
-        if (pPressed == false) {
-            velocidade = 0;
-            pPressed = true;
-            return;
-        } 
-        
-        if (pPressed == true) {
-            velocidade = 1;
-            pPressed = false;
-            return;
-        }
-    }*/
 }
 
-    function onMouseDown() {
-        newTiro(barBottom.x + barBottom.width / 2, barBottom.y);
-    }
+function onMouseDown() {
+    newTiro(barBottom.x + 43, barBottom.y);
+}

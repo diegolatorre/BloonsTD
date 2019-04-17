@@ -1,7 +1,7 @@
 function Tiro(x, y) {
     this.x = x;
     this.y = y;
-    this.r = 25;
+    this.r = 15;
 }
 
 function newTiro(x, y) {
@@ -15,9 +15,9 @@ Tiro.prototype.tiroRun = function (ctx) {
     //ctx.fillStyle = 'blue';
     ctx.lineWeight = 1;
     ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
-    ctx.drawImage(imgDardo, this.x - 25, this.y - 25, 50, 50);
+    ctx.drawImage(imgDardo, this.x - 15, this.y - 15, 30, 30);
     //ctx.fill();
-    ctx.stroke();
+    //ctx.stroke();
     ctx.closePath();
 }
 

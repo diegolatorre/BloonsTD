@@ -1,7 +1,7 @@
 function Balao(x, y) {
     this.x = x;
     this.y = y;
-    this.r = 10;
+    this.r = 25;
 }
 
 function newBalao(x, y, baloes) {
@@ -15,10 +15,12 @@ Balao.prototype.balaoRun = function (v) {
 
 Balao.prototype.balaoDraw = function (ctx) {
     ctx.beginPath();
-    ctx.fillStyle = 'black';
-    ctx.lineWeight = 2;
+    //ctx.fillStyle = 'black';
+    ctx.lineWeight = 1;
     ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
-    ctx.fill();
+    ctx.drawImage(imgBalao, this.x - 25, this.y - 25, 50, 50);
+    //ctx.stroke();
+    //ctx.fill();
     ctx.closePath();
 }
 
