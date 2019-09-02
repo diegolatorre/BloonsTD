@@ -1,5 +1,5 @@
 function onMouseMove(ev) {
-    barBottom.x = ev.x - 350;
+    barBottom.x = ev.x - ((20*screen.width)/100);
 }
 
 function onKeyDown(ev) {
