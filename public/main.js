@@ -54,17 +54,23 @@ var fases = [];
 
 var intervalo;
 
-var imgDardo = document.getElementById("dardo");
+var imgDardo = new Image();
+imgDardo.src = 'img/dardo.png';
 
-var imgMonkey = document.getElementById("monkey");
+var imgMonkey = new Image();
+imgMonkey.src = 'img/monkey.png';
 
-var imgMonkeyAtirando = document.getElementById("monkeyAtirando");
+var imgMonkeyAtirando = new Image();
+imgMonkeyAtirando.src = 'img/monkeyAtirando.png'; 
 
-var imgBalao = document.getElementById("balao");
+var imgBalao = new Image();
+imgBalao.src = 'img/balao.png';
 
-var canvasBackground = document.getElementById("canvasBackground");
+var canvasBackground = new Image();
+canvasBackground.src = 'img/canvasBackground.png';
 
-var imgPow = document.getElementById("pow");
+var imgPow = new Image();
+imgPow.src = 'img/pow.png';
 
 var popSound = document.getElementById("pop");;
 
