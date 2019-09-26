@@ -108,14 +108,14 @@ function draw() {
 
     document.getElementById("fase").innerHTML = countFase + 1;
 
-    //var ctx = setupCanvas(document.querySelector('canvas'));
-    var ctx = document.querySelector('canvas');
+    var ctx = setupCanvas(document.querySelector('canvas'));
+    //var ctx = document.querySelector('canvas');
     var ctx = canvas.getContext('2d');
 
     // Limpa o canvas
     //ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    ctx.drawImage(canvasBackground, 0, 0, canvas.width, canvas.height);
+    //ctx.drawImage(canvasBackground, 0, 0, canvas.width, canvas.height);
 
     if (tiros.length != 0) {
         for (var t = 0; t < tiros.length; t++) {
