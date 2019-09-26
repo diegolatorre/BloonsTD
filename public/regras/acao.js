@@ -1,4 +1,3 @@
-
 function comprarCongelar() {
     document.getElementById("lblMaisIce").innerHTML = maisIce;
     nCongelar += 1;
