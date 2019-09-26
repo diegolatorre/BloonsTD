@@ -1,5 +1,5 @@
 function onMouseMove(ev) {
-    barBottom.x = ev.x - canvas.offsetLeft;
+    barBottom.x = ev.x - (((screen.width / 12) * 3) + canvasBackground.offsetLeft);
 }
 
 function onKeyDown(ev) {
@@ -16,6 +16,7 @@ function onKeyDown(ev) {
     }
 }
 
-function onMouseDown() {
+function onMouseDown(ev) {
     newTiro(barBottom.x + 43, barBottom.y);
+    console.log(ev.x);
 }
