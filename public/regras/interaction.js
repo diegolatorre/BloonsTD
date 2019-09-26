@@ -1,5 +1,5 @@
 function onMouseMove(ev) {
-    barBottom.x = ev.x; // - canvas.offsetLeft;
+    barBottom.x = ev.x - canvas.offsetLeft;
 }
 
 function onKeyDown(ev) {
