@@ -1,214 +1,187 @@
+body,
+html {
+  height: 100%
+}
 .divCanvas {
-    height: 600px;
-    max-width: 600px;
-    margin: auto;
-    padding: 0
-  }
-
-canvas {
-    width: 100%;
-    height: 100%
-}
-
-.start {
-    position: relative;
-    float: left;
-    width: 100%;
-    height: 10%;
-    padding: 0;
-    border: 0;
-    margin: 0;
-    top: 30%;
-}
-
-#start {
-    position: relative;
-    float: left;
-    width: 20%;
     height: 100%;
-    padding: 0;
-    margin: 0;
-    left: 60%;
+    background: yellow;
 }
-
-
+canvas {
+  width: 100%;
+  height: 100%;
+  background: green;
+}
+.esquerda {
+  border: solid 1px red
+}
+.direita {
+  border: solid 1px #00f
+}
+.start {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 10%;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  top: 30%
+}
+#start {
+  position: relative;
+  float: left;
+  width: 20%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  left: 60%
+}
 .fase {
-    position: relative;
-    float: left;
-    margin-left: auto;
-    margin-right: auto;
+  position: relative;
+  float: left;
+  margin-left: auto;
+  margin-right: auto
 }
-
-#fase{
-        position: relative;
-        float:left;
-        margin-left: auto;
-        margin-right: auto;
+#fase {
+  position: relative;
+  float: left;
+  margin-left: auto;
+  margin-right: auto
 }
-
-.loja{
-    width: 100%;
-    height: 320px;
-    background-color:white;
-    margin-bottom: 3%;
+.loja {
+  width: 100%;
+  height: 320px;
+  background-color: #fff;
+  margin-bottom: 3%
 }
-
-.status{
-    width: 100%;
-    height: 320px;
-    background-color:white;
-    margin-bottom: 3%;
+.status {
+  width: 100%;
+  height: 320px;
+  background-color: #fff;
+  margin-bottom: 3%
 }
-
-#imgLifeDez{
-    margin: 10px;
-    height: 35px;
-    width: 35px;
+#imgLifeDez {
+  margin: 10px;
+  height: 35px;
+  width: 35px
 }
-
 #imgLifeDez:hover {
-    cursor: pointer;
+  cursor: pointer
 }
-
-#imgLifeFull{
-    margin: 10px;
-    height: 35px;
-    width: 35px;
+#imgLifeFull {
+  margin: 10px;
+  height: 35px;
+  width: 35px
 }
-
 #imgLifeFull:hover {
-    cursor: pointer;
+  cursor: pointer
 }
-
-#imgCongelar{
-    margin: 10px;
-    height: 35px;
-    width: 35px;
+#imgCongelar {
+  margin: 10px;
+  height: 35px;
+  width: 35px
 }
-
 #imgCongelar:hover {
-    cursor: pointer;
+  cursor: pointer
 }
-
-#imgBala{
-    margin: 10px;
-    height: 35px;
-    width: 35px;
+#imgBala {
+  margin: 10px;
+  height: 35px;
+  width: 35px
 }
-
-#imgBala:hover{
-    cursor: pointer;
+#imgBala:hover {
+  cursor: pointer
 }
-
-#imgGravidade{
-    margin: 10px;
-    height: 35px;
-    width: 35px;
+#imgGravidade {
+  margin: 10px;
+  height: 35px;
+  width: 35px
 }
-
-#imgGravidade:hover{
-    cursor: pointer;
+#imgGravidade:hover {
+  cursor: pointer
 }
-
-#imgLifeDez{
-    margin: 10px;
-    height: 35px;
-    width: 35px;
+#imgLifeDez {
+  margin: 10px;
+  height: 35px;
+  width: 35px
 }
-
-#imgLifeDez:hover{
-    cursor: pointer;
+#imgLifeDez:hover {
+  cursor: pointer
 }
-
-#imgLifeFull{
-    margin: 10px;
-    height: 35px;
-    width: 35px;
+#imgLifeFull {
+  margin: 10px;
+  height: 35px;
+  width: 35px
 }
-
-#imgLifeFull:hover{
-    cursor: pointer;
+#imgLifeFull:hover {
+  cursor: pointer
 }
-
-.start{
-    float: right;
-    margin-top: -100px;
+.start {
+  float: right;
+  margin-top: -100px
 }
-
-.start:hover{
-    float: right;
-    margin-top: -100px;
-    cursor: pointer;
+.start:hover {
+  float: right;
+  margin-top: -100px;
+  cursor: pointer
 }
-
-.start img{
-    margin: 10px;
-    height: 100px;
-    width: 100px;
+.start img {
+  margin: 10px;
+  height: 100px;
+  width: 100px
 }
-
-.saldo img{
-    margin: 10px;
-    margin-top: 10px;
-    height: 35px;
-    width: 35px;
-
+.saldo img {
+  margin: 10px;
+  margin-top: 10px;
+  height: 35px;
+  width: 35px
 }
-
-.pontos{
-    margin-right: 10px;
-    margin-top: -50px;
-    height: 100px;
-    width: 100px;
-    float: right;
+.pontos {
+  margin-right: 10px;
+  margin-top: -50px;
+  height: 100px;
+  width: 100px;
+  float: right
 }
-
-.status label{
-    position: absolute;
-    margin:10px;
-    font-size: 45px;
+.status label {
+  position: absolute;
+  margin: 10px;
+  font-size: 45px
 }
-
-.loja label{
-    position: absolute;
-    margin-top: 20px;
-    font-size: 45px;
+.loja label {
+  position: absolute;
+  margin-top: 20px;
+  font-size: 45px
 }
-
-.pontos{
-    margin-right: 50px;
+.pontos {
+  margin-right: 50px
 }
-
 .maisImg {
-    margin: 10px;
-    height: 30px;
-    width: 30px;
+  margin: 10px;
+  height: 30px;
+  width: 30px
 }
-
 .life img {
-    margin: 10px;
-    height: 30px;
-    width: 30px;
-    top: 30px;
+  margin: 10px;
+  height: 30px;
+  width: 30px;
+  top: 30px
 }
-
 .ice img {
-    margin: 10px;
-    height: 30px;
-    width: 30px;
-    top: 30px;
+  margin: 10px;
+  height: 30px;
+  width: 30px;
+  top: 30px
 }
-
 .bala img {
-    margin: 10px;
-    height: 30px;
-    width: 30px;
-    top: 30px;
+  margin: 10px;
+  height: 30px;
+  width: 30px;
+  top: 30px
 }
-
 .gravidade img {
-    margin: 10px;
-    height: 30px;
-    width: 30px;
-    top: 30px;
+  margin: 10px;
+  height: 30px;
+  width: 30px;
+  top: 30px
 }

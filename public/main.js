@@ -108,7 +108,8 @@ function draw() {
 
     document.getElementById("fase").innerHTML = countFase + 1;
 
-    var ctx = setupCanvas(document.querySelector('canvas'));
+    //var ctx = setupCanvas(document.querySelector('canvas'));
+    var ctx = document.querySelector('canvas');
     var ctx = canvas.getContext('2d');
 
     // Limpa o canvas
