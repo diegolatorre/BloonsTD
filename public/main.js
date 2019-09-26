@@ -72,7 +72,8 @@ canvasBackground.src = 'img/canvasBackground.png';
 var imgPow = new Image();
 imgPow.src = 'img/pow.png';
 
-var popSound = document.getElementById("pop");;
+var popSound = new Audio();
+popSound.src = 'sound/pop.mp3';
 
 function init() {
 
