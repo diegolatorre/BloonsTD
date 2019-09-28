@@ -42,7 +42,7 @@ var nTiroRasante = 0;
 
 var count = 0;
 
-var countFase = 0;
+var countFase = 1;
 
 var life = 100;
 
@@ -61,7 +61,7 @@ var imgMonkey = new Image();
 imgMonkey.src = 'img/monkey.png';
 
 var imgMonkeyAtirando = new Image();
-imgMonkeyAtirando.src = 'img/monkeyAtirando.png'; 
+imgMonkeyAtirando.src = 'img/monkeyAtirando.png';
 
 var imgBalao = new Image();
 imgBalao.src = 'img/balao.png';
@@ -106,14 +106,8 @@ function draw() {
         gameOver();
     }
 
-    document.getElementById("fase").innerHTML = countFase + 1;
-
     var ctx = setupCanvas(document.querySelector('canvas'));
-    //var ctx = document.querySelector('canvas');
     var ctx = canvas.getContext('2d');
-
-    // Limpa o canvas
-    //ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     ctx.drawImage(canvasBackground, 0, 0, canvas.width, canvas.height);
 
@@ -133,19 +127,22 @@ function draw() {
         clearInterval(intervalo);
     }
 
-    if (verificaFase() && fases[countFase].started == true) {
+    if (verificaFinalFase() && fases[countFase].started) {
         fases[countFase].started = false;
         countFase += 1;
+        document.getElementById("fase").innerHTML = countFase;
     }
 
     if (fases[countFase].baloes.length != 0) {
         for (let i = 0; i < fases[countFase].baloes.length; i++) {
-            if (congelar || gravidadeZero) {
-                fases[countFase].baloes[i].balaoDraw(ctx, velocidade);
-                fases[countFase].baloes[i].balaoOutScreen();
-            } else {
-                fases[countFase].baloes[i].balaoDraw(ctx, fases[countFase].v);
-                fases[countFase].baloes[i].balaoOutScreen();
+            if (fases[countFase].baloes[i]) {
+                if (congelar || gravidadeZero) {
+                    fases[countFase].baloes[i].balaoDraw(ctx, velocidade);
+                    fases[countFase].baloes[i].balaoOutScreen();
+                } else {
+                    fases[countFase].baloes[i].balaoDraw(ctx, fases[countFase].v);
+                    fases[countFase].baloes[i].balaoOutScreen();
+                }
             }
         }
     }
@@ -184,10 +181,10 @@ function startGame() {
     started = true;
 }
 
-function verificaFase() {
+function verificaFinalFase() {
     let verifica = 0;
     for (let i = 0; i < fases[countFase].baloes.length; i++) {
-        if (fases[countFase].baloes[i].x == -10000000) {
+        if (!fases[countFase].baloes[i]) {
             verifica += 1;
         }
     }

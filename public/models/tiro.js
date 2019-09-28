@@ -25,14 +25,16 @@ Tiro.prototype.tiroRun = function (ctx) {
 Tiro.prototype.impactoBola = function (ctx) {
     for (let i = 0; i < fases[countFase].baloes.length; i++) {
         var balao = fases[countFase].baloes[i];
-        op1 = (Math.max(balao.x, this.x) - Math.min(balao.x, this.x)) ** 2;
-        op2 = (Math.max(balao.y, this.y) - Math.min(balao.y, this.y)) ** 2;
-        d = Math.sqrt(op1 + op2);
-        if (d < balao.r + this.r) {
-            showCount();
-            popSound.play();
-            balao.removeBalaoImpacto(ctx);
-            this.removeTiro();
+        if (fases[countFase].baloes[i]) {
+            op1 = (Math.max(balao.x, this.x) - Math.min(balao.x, this.x)) ** 2;
+            op2 = (Math.max(balao.y, this.y) - Math.min(balao.y, this.y)) ** 2;
+            d = Math.sqrt(op1 + op2);
+            if (d < balao.r + this.r) {
+                showCount();
+                popSound.play();
+                balao.removeBalaoImpacto(ctx);
+                this.removeTiro();
+            }
         }
     }
 }
@@ -40,13 +42,15 @@ Tiro.prototype.impactoBola = function (ctx) {
 Tiro.prototype.impactoBolaRasante = function (ctx) {
     for (let i = 0; i < fases[countFase].baloes.length; i++) {
         var balao = fases[countFase].baloes[i];
-        op1 = (Math.max(balao.x, this.x) - Math.min(balao.x, this.x)) ** 2;
-        op2 = (Math.max(balao.y, this.y) - Math.min(balao.y, this.y)) ** 2;
-        d = Math.sqrt(op1 + op2);
-        if (d < balao.r + this.r) {
-            showCount();
-            popSound.play();
-            balao.removeBalaoImpacto(ctx);
+        if (fases[countFase].baloes[i]) {
+            op1 = (Math.max(balao.x, this.x) - Math.min(balao.x, this.x)) ** 2;
+            op2 = (Math.max(balao.y, this.y) - Math.min(balao.y, this.y)) ** 2;
+            d = Math.sqrt(op1 + op2);
+            if (d < balao.r + this.r) {
+                showCount();
+                popSound.play();
+                balao.removeBalaoImpacto(ctx);
+            }
         }
     }
     this.tiroOutScreen();

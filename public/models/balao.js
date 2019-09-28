@@ -34,18 +34,17 @@ Balao.prototype.balaoOutScreen = function () {
 }
 
 Balao.prototype.removeBalao = function (ctx) {
-    /*var x = fases[countFase].baloes.indexOf(this);
-    fases[countFase].baloes.splice(x, 1);*/
+    var x = fases[countFase].baloes.indexOf(this);
+    fases[countFase].baloes[x] = null;
     //ctx.drawImage(imgPow, this.x - 12, this.y - 12, 40, 40);
-    this.x = -10000000;
-    this.y = -10000000;
+    //this.x = -10000000;
+    //this.y = -10000000;
 }
 
 Balao.prototype.removeBalaoImpacto = function (ctx) {
-    /*var x = fases[countFase].baloes.indexOf(this);
-    fases[countFase].baloes.splice(x, 1);*/
+    var x = fases[countFase].baloes.indexOf(this);
+    fases[countFase].baloes[x] = null;
     ctx.drawImage(imgPow, this.x - 12, this.y - 12, 40, 40);
-    //this = null;
-    this.x = -10000000;
-    this.y = -10000000;
+    //this.x = -10000000;
+    //this.y = -10000000;
 }
