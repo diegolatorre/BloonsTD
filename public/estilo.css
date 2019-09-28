@@ -13,25 +13,6 @@ canvas {
 .direita {
   border: solid 1px #00f
 }
-.start {
-  position: relative;
-  float: left;
-  width: 100%;
-  height: 10%;
-  padding: 0;
-  border: 0;
-  margin: 0;
-  top: 30%
-}
-#start {
-  position: relative;
-  float: left;
-  width: 20%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  left: 60%
-}
 .fase {
   position: relative;
   float: left;
