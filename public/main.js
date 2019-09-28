@@ -115,7 +115,7 @@ function draw() {
     // Limpa o canvas
     //ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    //ctx.drawImage(canvasBackground, 0, 0, canvas.width, canvas.height);
+    ctx.drawImage(canvasBackground, 0, 0, canvas.width, canvas.height);
 
     if (tiros.length != 0) {
         for (var t = 0; t < tiros.length; t++) {

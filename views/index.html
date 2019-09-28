@@ -64,57 +64,173 @@
 
             <div class="col-lg-3 col-xl-3 direita">
 
-                <div class="life">
-                    <img src="img/coracao.png" /> <label id="lblLife">100</label>
+                <div class="row">
+                    <div class="col-lg-12 col-xl-12">
+                        <h1>Info</h1>
+                    </div>
                 </div>
 
-                <div class="ice">
-                    <img id="imgCongelar" src="img/snowflake.png" />
-                    <img class="maisImg" id="maisIce" src="img/mais.png" /> <label id="lblMaisIce">30</label>
+                <div class="row life">
+                    <div class="col-lg-3 col-xl-3">
+                        <img id="life" src="img/coracao.png" />
+                    </div>
+
+                    <div class="col-lg-3 col-xl-3">
+                        <label id="lblLife">100</label>
+                    </div>
+
+                    <div class="col-lg-3 col-xl-3">
+                        <label>X</label>
+                    </div>
+
+                    <div class="col-lg-3 col-xl-3 align">
+                        <label>Y</label>
+                    </div>
                 </div>
 
-                <div class="bala">
-                    <img id="imgBala" src="img/bala.png" />
-                    <img class="maisImg" id="maisBala" src="img/mais.png" /> <label id="lblMaisBala">30</label>
+                <div class="row saldo">
+                    <div class="col-lg-6 col-xl-6">
+                        <img src="img/cifrao.png" />
+                    </div>
+
+                    <div class="col-lg-6 col-xl-6">
+                        <label id="lblSaldo">0</label>
+                    </div>
                 </div>
-
-                <div class="gravidade">
-                    <img id="imgGravidade" src="img/astronaut.png" />
-                    <img class="maisImg" id="maisGravidade" src="img/mais.png" /> <label
-                        id="lblMaisGravidade">50</label>
-                </div>
-
-                <div class="lifeDez">
-                    <img id="imgLifeDez" src="img/coracao.png" />
-                    <img class="maisImg" id="lifeDez" src="img/mais.png" /> <label id="lblLifeDez">30</label>
-                </div>
-
-                <div class="lifeFull">
-                    <img id="imgLifeFull" src="img/coracao.png" />
-                    <img class="maisImg" id="lifeFull" src="img/mais.png" /> <label id="lblLifeFull">100</label>
-                </div>
-
-                <div class="saldo">
-                    <img src="img/cifrao.png" /> <label id="lblSaldo">0</label>
-                </div>
-
-
 
                 <div class="pontos">
-                    Pontos: <label id="lblPontos"></label>
+                    <div class="col-lg-6 col-xl-6">
+                        <label>Pontos:</label>
+                    </div>
+                    <div class="col-lg-6 col-xl-6">
+                        <label id="lblPontos"></label>
+                    </div>
                 </div>
 
-                <div class="ice">
-                    <img id="setCongelar" src="img/snowflake.png" /> <label id="lblCongelar">0</label>
+                <div class="row">
+                    <div class="col-lg-12 col-xl-12">
+                        <h1>Comprar</h1>
+                    </div>
                 </div>
 
-                <div class="bala">
-                    <img id="setTiroRasante" src="img/bala.png" /> <label id="lblTiroRasante">0</label>
+                <div class="row congelar">
+                    <div class="col-lg-4 col-xl-4">
+                        <img id="imgCongelar" src="img/snowflake.png" />
+                    </div>
+
+                    <div class="col-lg-4 col-xl-4">
+                        <label id="lblMaisIce">30</label>
+                    </div>
+
+                    <div class="col-lg-4 col-xl-4">
+                        <button type="button" id="maisIce" class="btn btn-primary">Comprar</button>
+                    </div>
                 </div>
 
-                <div class="gravidade">
-                    <img id="setGravidadeZero" src="img/astronaut.png" /> <label id="lblGravidadeZero">0</label>
+                <div class="row tiro-rasante">
+                    <div class="col-lg-4 col-xl-4">
+                        <img id="imgBala" src="img/bala.png" />
+                    </div>
+
+                    <div class="col-lg-4 col-xl-4">
+                        <label id="lblMaisBala">30</label>
+                    </div>
+
+                    <div class="col-lg-4 col-xl-4">
+                        <button type="button" id="maisBala" class="btn btn-primary">Comprar</button>
+                    </div>
                 </div>
+
+                <div class="row gravidade-zero">
+                    <div class="col-lg-4 col-xl-4">
+                        <img id="imgGravidade" src="img/astronaut.png" />
+                    </div>
+
+                    <div class="col-lg-4 col-xl-4">
+                        <label id="lblMaisGravidade">50</label>
+                    </div>
+
+                    <div class="col-lg-4 col-xl-4">
+                        <button type="button" id="maisGravidade" class="btn btn-primary">Comprar</button>
+                    </div>
+                </div>
+
+                <div class="row life-dez">
+                    <div class="col-lg-4 col-xl-4">
+                        <img id="imgLifeDez" src="img/coracao.png" />
+                    </div>
+
+                    <div class="col-lg-4 col-xl-4">
+                        <label id="lblLifeDez">30</label>
+                    </div>
+
+                    <div class="col-lg-4 col-xl-4">
+                        <button type="button" id="lifeDez" class="btn btn-primary">Comprar</button>
+                    </div>
+                </div>
+
+                <div class="row life-full">
+                    <div class="col-lg-4 col-xl-4">
+                        <img id="imgLifeFull" src="img/coracao.png" />
+                    </div>
+
+                    <div class="col-lg-4 col-xl-4">
+                        <label id="lblLifeFull">100</label>
+                    </div>
+
+                    <div class="col-lg-4 col-xl-4">
+                        <button type="button" id="lifeFull" class="btn btn-primary">Comprar</button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12 col-xl-12">
+                        <h1>Utilizar</h1>
+                    </div>
+                </div>
+
+                <div class="row usar-congelar">
+                    <div class="col-lg-4 col-xl-4">
+                        <img id="setCongelar" src="img/snowflake.png" />
+                    </div>
+
+                    <div class="col-lg-4 col-xl-4">
+                        <label id="lblCongelar">0</label>
+                    </div>
+
+                    <div class="col-lg-4 col-xl-4">
+                        <button type="button" id="" class="btn btn-primary">Usar</button>
+                    </div>
+                </div>
+
+                <div class="row usar-tiro-rasante">
+                    <div class="col-lg-4 col-xl-4">
+                        <img id="setTiroRasante" src="img/bala.png" />
+                    </div>
+
+                    <div class="col-lg-4 col-xl-4">
+                        <label id="lblTiroRasante">0</label>
+                    </div>
+
+                    <div class="col-lg-4 col-xl-4">
+                        <button type="button" id="" class="btn btn-primary">Usar</button>
+                    </div>
+                </div>
+
+                <div class="row usar-gravidade-zero">
+                    <div class="col-lg-4 col-xl-4">
+                        <img id="setGravidadeZero" src="img/astronaut.png" />
+                    </div>
+
+                    <div class="col-lg-4 col-xl-4">
+                        <label id="lblGravidadeZero">0</label>
+                    </div>
+
+                    <div class="col-lg-4 col-xl-4">
+                        <button type="button" id="" class="btn btn-primary">Usar</button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

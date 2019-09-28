@@ -16,7 +16,7 @@ var valorTiroRasante = 30;
 var valorGravidadeZero = 50;
 
 //Declarando e recebendo o saldo atual
-var saldo = 0;
+var saldo = 500;
 
 function comprarCongelar() {
     if (saldo >= valorCongelar) {
