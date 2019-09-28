@@ -1,5 +1,5 @@
 function onMouseMove(ev) {
-    var mouseX = ev.x - (((screen.width / 12) * 3) + canvasBackground.offsetLeft + 10);
+    var mouseX = ev.x - (((screen.width / 12) * 2) + canvasBackground.offsetLeft + 10);
     barBottom.x = mouseX;
 }
 
