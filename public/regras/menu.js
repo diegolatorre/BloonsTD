@@ -97,8 +97,16 @@ function usarGravidadeZero() {
         if (gravidadeZero == false) {
             velocidade = 0.2;
             gravidadeZero = true;
+            clearInterval(intervalo);
+            intervalo = setInterval(function () {
+                fases[countFase].startFase();
+            }, fases[countFase].tempo * 3);
             setTimeout(function () {
                 usarGravidadeZero();
+                clearInterval(intervalo);
+                intervalo = setInterval(function () {
+                    fases[countFase].startFase();
+                }, fases[countFase].tempo);
             }, 1000 * 10);
             nGravidadeZero -= 1;
             document.getElementById("lblGravidadeZero").innerHTML = nGravidadeZero;
@@ -124,7 +132,7 @@ function usarCongelar() {
                 congelar = false;
                 intervalo = setInterval(function () {
                     fases[countFase].startFase();
-                }, 1000);
+                }, fases[countFase].tempo);
             }, 1000 * 10);
             nCongelar -= 1;
             document.getElementById("lblCongelar").innerHTML = nCongelar;
