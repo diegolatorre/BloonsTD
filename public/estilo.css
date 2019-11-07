@@ -8,7 +8,7 @@ canvas {
   cursor: none
 }
 .esquerda {
-  border: solid 1px red
+  border: solid 1px red;
 }
 .direita {
   border: solid 1px #00f;
