@@ -11,7 +11,8 @@ canvas {
   border: solid 1px red;
 }
 .direita {
-  border: solid 1px #00f
+  border: solid 1px #00f;
+  overflow: auto;
 }
 img {
   margin: 10px;
