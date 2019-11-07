@@ -26,49 +26,126 @@
 
 <body onload="init();">
 
-    <div class="container-fluid">
+    <div class="container-fluid h-100">
 
-        <div class="row justify-content-center">
+        <div class="row justify-content-center h-100">
 
-            <div class="col-lg-2 col-xl-2 esquerda">
+            <div class="col-m-2 col-lg-2 col-xl-2 esquerda">
+                <div class="container-fluid">
 
-                <div class="row">
-                    <div class="col-lg-12 col-xl-12">
-                        <h1>Bloons Tower Defense</h1>
+                    <div class="row">
+                        <div class="col-m-12 col-lg-12 col-xl-12">
+                            <h1>Bloons Tower Defense</h1>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-m-6 col-lg-6 col-xl-6">
+                            <p>Fase: </p>
+                        </div>
+
+                        <div class="col-m-6 col-lg-6 col-xl-6">
+                            <label id="fase">1</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-m-12 col-lg-12 col-xl-12">
+                            <button class="btn btn-primary btn-lg btn-block" id="start">Start</button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-m-12 col-lg-12 col-xl-12">
+                            <a href="/teste"><button class="btn btn-primary btn-lg btn-block">Como Jogar</button></a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-m-12 col-lg-12 col-xl-12">
+                            <h1>Comprar</h1>
+                        </div>
+                    </div>
+
+                    <div class="row congelar">
+                        <div class="col-m-4 col-lg-4 col-xl-4">
+                            <img id="imgCongelar" src="img/snowflake.png" />
+                        </div>
+
+                        <div class="col-m-4 col-lg-4 col-xl-4">
+                            <label id="lblMaisIce">30</label>
+                        </div>
+
+                        <div class="col-m-4 col-lg-4 col-xl-4">
+                            <button type="button" id="maisIce" class="btn btn-primary">Comprar</button>
+                        </div>
+                    </div>
+
+                    <div class="row tiro-rasante">
+                        <div class="col-m-4 col-lg-4 col-xl-4">
+                            <img id="imgBala" src="img/bala.png" />
+                        </div>
+
+                        <div class="col-m-4 col-lg-4 col-xl-4">
+                            <label id="lblMaisBala">30</label>
+                        </div>
+
+                        <div class="col-m-4 col-lg-4 col-xl-4">
+                            <button type="button" id="maisBala" class="btn btn-primary">Comprar</button>
+                        </div>
+                    </div>
+
+                    <div class="row gravidade-zero">
+                        <div class="col-m-4 col-lg-4 col-xl-4">
+                            <img id="imgGravidade" src="img/astronaut.png" />
+                        </div>
+
+                        <div class="col-m-4 col-lg-4 col-xl-4">
+                            <label id="lblMaisGravidade">50</label>
+                        </div>
+
+                        <div class="col-m-4 col-lg-4 col-xl-4">
+                            <button type="button" id="maisGravidade" class="btn btn-primary">Comprar</button>
+                        </div>
+                    </div>
+
+                    <div class="row life-dez">
+                        <div class="col-m-4 col-lg-4 col-xl-4">
+                            <img id="imgLifeDez" src="img/coracao.png" />
+                        </div>
+
+                        <div class="col-m-4 col-lg-4 col-xl-4">
+                            <label id="lblLifeDez">30</label>
+                        </div>
+
+                        <div class="col-m-4 col-lg-4 col-xl-4">
+                            <button type="button" id="lifeDez" class="btn btn-primary">Comprar</button>
+                        </div>
+                    </div>
+
+                    <div class="row life-full">
+                        <div class="col-m-4 ol-lg-4 col-xl-4">
+                            <img id="imgLifeFull" src="img/coracao.png" />
+                        </div>
+
+                        <div class="col-m-4 col-lg-4 col-xl-4">
+                            <label id="lblLifeFull">100</label>
+                        </div>
+
+                        <div class="col-m-4 col-lg-4 col-xl-4">
+                            <button type="button" id="lifeFull" class="btn btn-primary">Comprar</button>
+                        </div>
                     </div>
                 </div>
-
-                <div class="row">
-                    <div class="col-lg-6 col-xl-6">
-                        <p>Fase: </p>
-                    </div>
-
-                    <div class="col-lg-6 col-xl-6">
-                        <label id="fase">1</label>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-12 col-xl-12">
-                        <button class="btn btn-primary btn-lg btn-block" id="start">Start</button>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-12 col-xl-12">
-                        <a href="/teste"><button class="btn btn-primary btn-lg btn-block">Como Jogar</button></a>
-                    </div>
-                </div>
-
             </div>
 
-            <div class="divCanvas col-lg-8 col-xl-8">
+            <div class="divCanvas col-m-8 col-lg-8 col-xl-8">
 
                 <canvas id="canvas"></canvas>
 
             </div>
 
-            <div class="col-lg-2 col-xl-2 direita">
+            <div class="col-m-8 col-lg-2 col-xl-2 direita">
 
                 <div class="row">
                     <div class="col-lg-12 col-xl-12">
@@ -77,115 +154,39 @@
                 </div>
 
                 <div class="row life">
-                    <div class="col-lg-3 col-xl-3">
+                    <div class="col-m-3 col-lg-3 col-xl-3">
                         <img id="life" src="img/coracao.png" />
                     </div>
 
-                    <div class="col-lg-3 col-xl-3">
+                    <div class="col-m-3 col-lg-3 col-xl-3">
                         <label id="lblLife">100</label>
                     </div>
 
-                    <div class="col-lg-3 col-xl-3">
+                    <div class="col-m-3 col-lg-3 col-xl-3">
                         <label>X</label>
                     </div>
 
-                    <div class="col-lg-3 col-xl-3 align">
+                    <div class="col-m-3 col-lg-3 col-xl-3 align">
                         <label>Y</label>
                     </div>
                 </div>
 
                 <div class="row saldo">
-                    <div class="col-lg-6 col-xl-6">
+                    <div class="col-m-6 col-lg-6 col-xl-6">
                         <img src="img/cifrao.png" />
                     </div>
 
-                    <div class="col-lg-6 col-xl-6">
+                    <div class="col-m-6 col-lg-6 col-xl-6">
                         <label id="lblSaldo">0</label>
                     </div>
                 </div>
 
                 <div class="pontos">
-                    <div class="col-lg-6 col-xl-6">
+                    <div class="col-m-6 col-lg-6 col-xl-6">
                         <label>Pontos:</label>
                     </div>
-                    <div class="col-lg-6 col-xl-6">
+                    <div class="col-m-6 col-lg-6 col-xl-6">
                         <label id="lblPontos"></label>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-12 col-xl-12">
-                        <h1>Comprar</h1>
-                    </div>
-                </div>
-
-                <div class="row congelar">
-                    <div class="col-lg-4 col-xl-4">
-                        <img id="imgCongelar" src="img/snowflake.png" />
-                    </div>
-
-                    <div class="col-lg-4 col-xl-4">
-                        <label id="lblMaisIce">30</label>
-                    </div>
-
-                    <div class="col-lg-4 col-xl-4">
-                        <button type="button" id="maisIce" class="btn btn-primary">Comprar</button>
-                    </div>
-                </div>
-
-                <div class="row tiro-rasante">
-                    <div class="col-lg-4 col-xl-4">
-                        <img id="imgBala" src="img/bala.png" />
-                    </div>
-
-                    <div class="col-lg-4 col-xl-4">
-                        <label id="lblMaisBala">30</label>
-                    </div>
-
-                    <div class="col-lg-4 col-xl-4">
-                        <button type="button" id="maisBala" class="btn btn-primary">Comprar</button>
-                    </div>
-                </div>
-
-                <div class="row gravidade-zero">
-                    <div class="col-lg-4 col-xl-4">
-                        <img id="imgGravidade" src="img/astronaut.png" />
-                    </div>
-
-                    <div class="col-lg-4 col-xl-4">
-                        <label id="lblMaisGravidade">50</label>
-                    </div>
-
-                    <div class="col-lg-4 col-xl-4">
-                        <button type="button" id="maisGravidade" class="btn btn-primary">Comprar</button>
-                    </div>
-                </div>
-
-                <div class="row life-dez">
-                    <div class="col-lg-4 col-xl-4">
-                        <img id="imgLifeDez" src="img/coracao.png" />
-                    </div>
-
-                    <div class="col-lg-4 col-xl-4">
-                        <label id="lblLifeDez">30</label>
-                    </div>
-
-                    <div class="col-lg-4 col-xl-4">
-                        <button type="button" id="lifeDez" class="btn btn-primary">Comprar</button>
-                    </div>
-                </div>
-
-                <div class="row life-full">
-                    <div class="col-lg-4 col-xl-4">
-                        <img id="imgLifeFull" src="img/coracao.png" />
-                    </div>
-
-                    <div class="col-lg-4 col-xl-4">
-                        <label id="lblLifeFull">100</label>
-                    </div>
-
-                    <div class="col-lg-4 col-xl-4">
-                        <button type="button" id="lifeFull" class="btn btn-primary">Comprar</button>
                     </div>
                 </div>
 

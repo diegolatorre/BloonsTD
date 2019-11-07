@@ -3,12 +3,12 @@ html {
   height: 100%
 }
 canvas {
-  height: 100vh;
+  height: 99vh;
   width: 100%;
   cursor: none
 }
 .esquerda {
-  border: solid 1px red
+  border: solid 1px red;
 }
 .direita {
   border: solid 1px #00f
