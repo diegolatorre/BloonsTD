@@ -92,7 +92,7 @@ function init() {
     iniciarFases();
 
     barBottom.x = 0;
-    barBottom.y = canvas.height - 50;
+    barBottom.y = canvas.height - canvas.height / 4;
 
     setInterval(draw, 1000 / 60);
 }
