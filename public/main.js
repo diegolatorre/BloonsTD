@@ -101,6 +101,8 @@ function draw() {
     if (!started) {
         return;
     }
+    
+    newTiro(barBottom.x + 43, barBottom.y);
 
     if (life <= 0) {
         gameOver();
